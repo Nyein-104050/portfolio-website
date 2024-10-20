@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="navbar">
+        <div class="time">
+          <h2>9:00</h2>
+        </div>
+        <div class="icon">
+          <img src="./icons8-bar-chart-24.png" alt="" />
+          <img src="./icons8-wi-fi-24.png" alt="" />
+          <img class="battery" src="./icons8-battery-30.png" alt="" />
+        </div>
+      </div>
+      <div class="body">
+        <div class="space" id="result">
+          <h3>0</h3>
+        </div>
+        <div class="touch">
+          <button class="gray" id="clear" onclick="clearcalculator()">AC</button>
+          <button class="gray" onclick="getdata(this)">%</button>
+          <button class="gray" onclick="getdata(this)">//</button>
+          <button class="yellow" onclick="getdata(this)" id="calculate">=</button>
+          <button class="black" onclick="getdata(this)">7</button>
+          <button class="black" onclick="getdata(this)">8</button>
+          <button class="black" onclick="getdata(this)">9</button>
+          <button class="yellow" onclick="getdata(this)">+</button>
+          <button class="black" onclick="getdata(this)">4</button>
+          <button class="black" onclick="getdata(this)">5</button>
+          <button class="black" onclick="getdata(this)">6</button>
+          <button class="yellow" onclick="getdata(this)">-</button>
+          <button class="black" onclick="getdata(this)">1</button>
+          <button class="black" onclick="getdata(this)">2</button>
+          <button class="black" onclick="getdata(this)">3</button>
+          <button class="yellow" onclick="getdata(this)">*</button>
+          <button class="black" onclick="getdata(this)">0</button>
+          <button class="black" onclick="getdata(this)">..</button>
+          <button class="black" onclick="getdata(this)">.</button>
+          <button class="yellow" onclick="getdata(this)">/</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+   document.getElementById('result')
+    let temp=""
+   function getdata(data) {
+    if (data.innerHTML == '=') {
+       result.innerText=eval(temp)
+       temp=eval(temp)
+       console.log(temp);
+    }else{
+        result.innerText=data.innerText
+        temp += data.innerText
+        
+    }
+   }
+   function clearcalculator() {
+    result.innerText=0
+      temp=""
+   }
+  </script>
+</html>
